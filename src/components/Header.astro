@@ -1,0 +1,25 @@
+---
+interface Props {
+    sections: {
+        id: string;
+        title: string;
+    }[];
+}
+const { sections } = Astro.props;
+---
+
+<header class="flex justify-center items-center py-6 mb-4">
+    <nav>
+        <ul class="flex flex-row gap-5 text-white">
+            {
+                sections.map((section: any) => (
+                    <li>
+                        <a class="hover:text-cyan-700" href={`#${section.id}`}>
+                            {section.title}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+    </nav>
+</header>
