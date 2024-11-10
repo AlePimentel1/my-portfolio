@@ -8,13 +8,13 @@ interface Props {
 const { sections } = Astro.props;
 ---
 
-<header class="flex justify-center items-center py-6 mb-4">
+<header class="fixed top-6 flex justify-center items-center py-2 px-4 bg-gray-600 rounded-full z-10">
     <nav>
         <ul class="flex flex-row gap-5 text-white">
             {
                 sections.map((section: any) => (
                     <li>
-                        <a class="hover:text-cyan-700" href={`#${section.id}`}>
+                        <a class="hover:text-black uppercase text-sm" href={`#${section.id}`}>
                             {section.title}
                         </a>
                     </li>

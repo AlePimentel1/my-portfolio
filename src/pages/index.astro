@@ -7,32 +7,49 @@ import BriefCase from "../components/icons/BriefCaseIcon.astro";
 
 <Layout title="Ale - Portfolio">
 	<main>
-		<section
-			id="about-me"
-			class="flex flex-col lg:flex-row items-center gap-4 mx-auto max-w-4xl my-20 mb-32"
-		>
-			<img
+		<section class="relative flex flex-col justify-center lg:flex-col min-h-screen items-center gap-8 mx-10">
+			<!-- <img
 				src="/profile.jpeg"
 				alt="Alessandro's profile picture"
-				class="w-auto h-20 lg:h-40 rounded-full border border-white hover:scale-110 transition-transform"
-			/>
-			<div class="flex flex-col gap-1">
-				<h1 class="text-white text-4xl">
-					Hi, I'm
+				class="w-auto h-20 lg:h-40 rounded-full border border-white hover:scale-110 transition-transform bg-[url('/assets/bg-pattern.svg')]"
+			/> -->
+				<h1 class="text-white text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold">
+					Hi <span class="animate-wave">👋🏼</span>,
+					</br>
 					<span
 						class="font-semibold
 					bg-gradient-to-r bg-clip-text text-transparent
-					from-cyan-700 via-cyan-400 to-cyan-700
-					animate-text"
-						>Alessandro Pimentel</span
+					from-green-400 via-green-600 to-green-700
+					animate-text text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+						>I'm Alessandro Pimentel</span
 					>
 				</h1>
-				<h2 class="">
-					+3 years of experience. Full Stack Developer. Born in
-					Uruguay 🇺🇾. I'm passionate about technology and love to
-					acquire new knowledge. I'm always looking for new challenges
-					and opportunities to grow.
-				</h2>
+				<a href="#about-me" class="absolute bottom-8 bg-gradient-to-b from-gray-600 to-gray-500 text-white px-4 py-2 rounded-2xl animate-bounce hover:shadow-green-300 hover:shadow-md hover:outline hover:outline-green-600 hover:sca
+					<!-- arrow icon bottom -->
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-down"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+				</a>
+			</div>
+		</section>
+		<section
+			id="about-me"
+			class="flex flex-col justify-center lg:flex-col items-center gap-4 mx-10"
+		>
+			<!-- <img
+				src="/profile.jpeg"
+				alt="Alessandro's profile picture"
+				class="w-auto h-20 lg:h-40 rounded-full border border-white hover:scale-110 transition-transform bg-[url('/assets/bg-pattern.svg')]"
+			/> -->
+				<h1 class="text-white text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold">
+					Hi <span class="animate-wave">👋🏼</span>,
+					</br>
+					<span
+						class="font-semibold
+					bg-gradient-to-r bg-clip-text text-transparent
+					to-white via-gray-400 from-gray-600
+					animate-text text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+						>I'm Alessandro Pimentel</span
+					>
+				</h1>
 			</div>
 		</section>
 		<section
