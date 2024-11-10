@@ -1,62 +1,84 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import ExpierenceItem from "../components/ExperienceItem.astro";
 import { workExperience } from "../constants";
 import BriefCase from "../components/icons/BriefCaseIcon.astro";
+import Timeline from "../components/Timeline.astro";
 ---
 
 <Layout title="Ale - Portfolio">
 	<main>
-		<section class="relative flex flex-col justify-center lg:flex-col min-h-screen items-center gap-8 mx-10">
-			<!-- <img
-				src="/profile.jpeg"
-				alt="Alessandro's profile picture"
-				class="w-auto h-20 lg:h-40 rounded-full border border-white hover:scale-110 transition-transform bg-[url('/assets/bg-pattern.svg')]"
-			/> -->
-				<h1 class="text-white text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold">
-					Hi <span class="animate-wave">👋🏼</span>,
-					</br>
-					<span
-						class="font-semibold
-					bg-gradient-to-r bg-clip-text text-transparent
-					from-green-400 via-green-600 to-green-700
-					animate-text text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
-						>I'm Alessandro Pimentel</span
-					>
+		<section
+			class="relative flex flex-col justify-center lg:flex-col min-h-screen items-center gap-8 mx-10"
+		>
+			<span class="flex flex-col tracking-wide">
+				<span
+					class="flex flex-row text-white text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold"
+				>
+					Hi <p class="animate-wave">👋🏼</p>,
+				</span>
+				<h1
+					class="font-semibold
+				bg-gradient-to-r bg-clip-text text-transparent
+				from-green-400 via-green-600 to-green-700
+				animate-text text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+				>
+					I'm Alessandro Pimentel
 				</h1>
-				<a href="#about-me" class="absolute bottom-8 bg-gradient-to-b from-gray-600 to-gray-500 text-white px-4 py-2 rounded-2xl animate-bounce hover:shadow-green-300 hover:shadow-md hover:outline hover:outline-green-600 hover:sca
-					<!-- arrow icon bottom -->
-					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-down"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
-				</a>
-			</div>
+			</span>
+			<a
+				href="#about-me"
+				class="absolute bottom-52 bg-gradient-to-b from-gray-600 to-gray-500 text-white px-4 py-2 rounded-2xl animate-bounce hover:shadow-green-400 hover:shadow-md hover:outline hover:outline-green-600"
+			>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="24"
+					height="24"
+					viewBox="0 0 24 24"
+					fill="none"
+					stroke="currentColor"
+					stroke-width="2"
+					stroke-linecap="round"
+					stroke-linejoin="round"
+					class="lucide lucide-arrow-down"
+					><path d="M12 5v14"></path><path d="m19 12-7 7-7-7"
+					></path></svg
+				>
+			</a>
 		</section>
 		<section
 			id="about-me"
-			class="flex flex-col justify-center lg:flex-col items-center gap-4 mx-10"
+			class="flex flex-col w-full justify-center lg:flex-row items-center gap-4 py-32"
 		>
-			<!-- <img
-				src="/profile.jpeg"
-				alt="Alessandro's profile picture"
-				class="w-auto h-20 lg:h-40 rounded-full border border-white hover:scale-110 transition-transform bg-[url('/assets/bg-pattern.svg')]"
-			/> -->
-				<h1 class="text-white text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold">
-					Hi <span class="animate-wave">👋🏼</span>,
-					</br>
-					<span
-						class="font-semibold
-					bg-gradient-to-r bg-clip-text text-transparent
-					to-white via-gray-400 from-gray-600
-					animate-text text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
-						>I'm Alessandro Pimentel</span
-					>
-				</h1>
-			</div>
+			<span class="flex flex-col items-start justify-center gap-4">
+				<p class="text-3xl text-green-500 text-center lg:text-left">
+					About Me
+				</p>
+				<h2
+					class="max-w-3xl text-white text-xl text-balance tracking-wide"
+				>
+					I'm a 22 years old Full Stack Developer, with more than 3
+					years of experience. Self-taught developer who loves
+					learning new technologies and tackling exciting challenges.
+					I enjoy staying up-to-date with the latest tools and
+					technologies to continually improve and expand my skill set.
+				</h2>
+			</span>
+			<span
+				class="relative hover:scale-110 transition-transform duration-300"
+			>
+				<img
+					src="/profile.jpeg"
+					alt="Alessandro's profile picture"
+					class="w-auto h-20 lg:h-60 rounded-full outline outline-white"
+				/>
+				<p class="absolute text-6xl bottom-0 right-2">🇺🇾</p>
+			</span>
 		</section>
 		<section
 			id="experience"
-			class="flex flex-col gap-4 w-full mx-auto items-center"
+			class="flex flex-col gap-4 w-full mx-auto items-center py-44"
 		>
-			<div>
+			<!-- <div>
 				<div class="flex flex-row items-center w-full gap-3">
 					<BriefCase />
 					<h2 class="text-[20px]">Work Experience</h2>
@@ -72,7 +94,8 @@ import BriefCase from "../components/icons/BriefCaseIcon.astro";
 						))
 					}
 				</ol>
-			</div>
+			</div> -->
+			<Timeline experience={workExperience} />
 		</section>
 	</main>
 </Layout>

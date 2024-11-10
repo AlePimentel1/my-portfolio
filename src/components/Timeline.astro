@@ -1,0 +1,52 @@
+---
+interface Props {
+    experience: {
+        date: string;
+        title: string;
+        description: string;
+        position: string;
+    }[];
+}
+
+const { experience } = Astro.props;
+---
+
+<div class="flex items-center justify-center w-full h-full">
+    <div class="relative wrap overflow-hidden p-24 h-full">
+        <!-- <div
+            class="border-2 absolute h-full"
+            style="right: 50%; border: 2px solid #22c55e; border-radius: 1%;"
+        >
+        </div> -->
+        <div
+            class="border-2 absolute h-full"
+            style="left: 50%; border: 2px solid #22c55e; border-radius: 1%;"
+        >
+        </div>
+        {
+            experience.map((exp, index) => (
+                <div
+                    class={`mb-8 flex justify-between items-center w-full ${index % 2 === 0 ? "flex-row-reverse" : "flex-row"}`}
+                >
+                    <div class="order-1 w-5/12" />
+                    <div
+                        class={`order-1 w-5/12 px-1 py-4 text-${index % 2 === 0 ? "right" : "left"}`}
+                    >
+                        <p class="mb-3 text-base text-white">{exp.date}</p>
+                        <h4 class="mb-3 font-bold text-green-600 text-lg md:text-2xl">
+                            {exp.title}
+                        </h4>
+                        <span
+                            class={`inline-block mb-3 px-3 bg-green-700 py-1 text-xs font-semibold leading-none text-white rounded-full`}
+                        >
+                            {exp.position}
+                        </span>
+                        <p class="text-sm md:text-base leading-snug text-gray-50 text-opacity-100">
+                            {exp.description}
+                        </p>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+</div>
