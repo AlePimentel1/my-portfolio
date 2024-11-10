@@ -8,8 +8,8 @@ export const sections = [
         title: "Experience",
     },
     {
-        id: "contact",
-        title: "Contact",
+        id: "project",
+        title: "Projects",
     },
 ];
 

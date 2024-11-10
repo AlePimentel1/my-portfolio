@@ -1,7 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { workExperience } from "../constants";
-import BriefCase from "../components/icons/BriefCaseIcon.astro";
 import Timeline from "../components/Timeline.astro";
 ---
 
@@ -47,54 +46,51 @@ import Timeline from "../components/Timeline.astro";
 		</section>
 		<section
 			id="about-me"
-			class="flex flex-col w-full justify-center lg:flex-row items-center gap-4 py-32"
+			class="py-32 flex w-full items-center justify-center"
 		>
-			<span class="flex flex-col items-start justify-center gap-4">
-				<p class="text-3xl text-green-500 text-center lg:text-left">
-					About Me
-				</p>
-				<h2
-					class="max-w-3xl text-white text-xl text-balance tracking-wide"
-				>
-					I'm a 22 years old Full Stack Developer, with more than 3
-					years of experience. Self-taught developer who loves
-					learning new technologies and tackling exciting challenges.
-					I enjoy staying up-to-date with the latest tools and
-					technologies to continually improve and expand my skill set.
-				</h2>
-			</span>
-			<span
-				class="relative hover:scale-110 transition-transform duration-300"
+			<div
+				class="flex flex-col justify-center lg:flex-row items-center bg-black p-8 w-fit border border-green-600 [box-shadow:rgb(20,83,45)12px_12px] hover:[box-shadow:rgb(20,83,45)0px_0px] transition-all duration-300"
 			>
-				<img
-					src="/profile.jpeg"
-					alt="Alessandro's profile picture"
-					class="w-auto h-20 lg:h-60 rounded-full outline outline-white"
-				/>
-				<p class="absolute text-6xl bottom-0 right-2">🇺🇾</p>
-			</span>
+				<span class="flex
+				flex-col
+				items-start
+				justify-center
+				gap-4">
+					<p
+						class="text-3xl text-center lg:text-left
+					bg-gradient-to-r bg-clip-text text-transparent
+				from-green-400 via-green-600 to-green-700
+				animate-text"
+					>
+						About Me
+					</p>
+					<h2
+						class="max-w-3xl text-white text-xl text-balance tracking-wide"
+					>
+						I'm a 22 years old Full Stack Developer, with more than
+						3 years of experience. Self-taught developer who loves
+						learning new technologies and tackling exciting
+						challenges. I enjoy staying up-to-date with the latest
+						tools and technologies to continually improve and expand
+						my skill set.
+					</h2>
+				</span>
+				<span
+					class="relative hover:scale-110 transition-transform duration-300"
+				>
+					<img
+						src="/profile.jpeg"
+						alt="Alessandro's profile picture"
+						class="w-auto h-20 lg:h-60 rounded-full outline outline-white"
+					/>
+					<p class="absolute text-6xl bottom-0 right-2">🇺🇾</p>
+				</span>
+			</div>
 		</section>
 		<section
 			id="experience"
 			class="flex flex-col gap-4 w-full mx-auto items-center py-44"
 		>
-			<!-- <div>
-				<div class="flex flex-row items-center w-full gap-3">
-					<BriefCase />
-					<h2 class="text-[20px]">Work Experience</h2>
-				</div>
-				<ol
-					class="relative border-s border-gray-200 dark:border-gray-700 lg:max-w-[720px]"
-				>
-					{
-						workExperience.map((experience, index) => (
-							<li class="mb-10 ms-4">
-								<ExpierenceItem {...experience} />
-							</li>
-						))
-					}
-				</ol>
-			</div> -->
 			<Timeline experience={workExperience} />
 		</section>
 	</main>

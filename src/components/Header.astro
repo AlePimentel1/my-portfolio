@@ -1,6 +1,7 @@
 ---
 import LinkedinIcon from "./icons/LinkedinIcon.astro";
 import GithubIcon from "./icons/GithubIcon.astro";
+import MailIcon from "./icons/MailIcon.astro";
 
 interface Props {
     sections: {
@@ -17,10 +18,11 @@ const { sections } = Astro.props;
     <!-- Left section: Email -->
     <div class="flex items-center gap-2 text-white">
         <a
-            href="mailto:tuemail@example.com"
-            class="hover:text-green-500 text-[13px] uppercase"
+            href="mailto:pimentelaleee@gmail.com"
+            target="_blank"
+            class="outline outline-slate-50 p-2 rounded-full bg-transparent backdrop-blur-3xl hover:outline-green-600 hover:bg-white/20"
         >
-            tuemail@example.com
+            <MailIcon />
         </a>
     </div>
 
