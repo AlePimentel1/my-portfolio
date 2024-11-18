@@ -13,19 +13,8 @@ const { sections } = Astro.props;
 ---
 
 <header
-    class="fixed top-6 left-0 right-0 flex items-center justify-between px-8 z-10"
+    class="fixed top-6 left-0 right-0 flex items-center justify-center px-8 z-10"
 >
-    <!-- Left section: Email -->
-    <div class="flex items-center gap-2 text-white">
-        <a
-            href="mailto:pimentelaleee@gmail.com"
-            target="_blank"
-            class="outline outline-slate-50 p-2 rounded-full bg-transparent backdrop-blur-3xl hover:outline-green-600 hover:bg-white/20"
-        >
-            <MailIcon />
-        </a>
-    </div>
-
     <!-- Centered Navigation -->
     <nav
         class="flex justify-center px-5 py-2 outline outline-slate-50 bg-transparent backdrop-blur-3xl rounded-full z-10 hover:scale-110 transition-transform duration-300 hover:outline hover:outline-green-600 hover:shadow-md hover:shadow-green-400"
@@ -45,25 +34,4 @@ const { sections } = Astro.props;
             }
         </ul>
     </nav>
-
-    <!-- Right section: Social Icons -->
-    <div class="flex gap-4 items-center text-white">
-        <!-- LinkedIn -->
-        <a
-            href="https://www.linkedin.com/in/alessandro-pimentel-535490211/"
-            target="_blank"
-            class="outline outline-slate-50 p-2 rounded-full bg-transparent backdrop-blur-3xl hover:outline-green-600 hover:bg-white/20"
-        >
-            <LinkedinIcon />
-        </a>
-        <!-- Github -->
-        <a
-            href="https://github.com/AlePimentel1"
-            target="_blank"
-            class="outline outline-slate-50 p-2 rounded-full bg-transparent backdrop-blur-3xl hover:outline-green-600 hover:bg-white/20"
-        >
-            <GithubIcon />
-        </a>
-        <!-- Agrega más íconos de redes sociales aquí -->
-    </div>
 </header>

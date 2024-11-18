@@ -7,9 +7,11 @@ import Timeline from "../components/Timeline.astro";
 <Layout title="Ale - Portfolio">
 	<main>
 		<section
-			class="relative flex flex-col justify-center lg:flex-col min-h-screen items-center gap-8 mx-10"
+			class="relative flex flex-col justify-center lg:flex-col min-h-screen items-center gap-10 mx-10"
 		>
-			<span class="flex flex-col tracking-wide">
+			<span
+				class="flex flex-col tracking-wide rounded-xl border p-24 bg-black [box-shadow:rgb(20,83,45)12px_12px]"
+			>
 				<span
 					class="flex flex-row text-white text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold"
 				>
@@ -19,14 +21,32 @@ import Timeline from "../components/Timeline.astro";
 					class="font-semibold
 				bg-gradient-to-r bg-clip-text text-transparent
 				from-green-400 via-green-600 to-green-700
-				animate-text text-5xl md:text-6xl lg:text-7xl xl:text-8xl"
+				animate-text text-5xl md:text-6xl lg:text-7xl xl:text-7xl"
 				>
 					I'm Alessandro Pimentel
 				</h1>
 			</span>
+			<span class="flex flex-row gap-4">
+				<!-- download resume -->
+				<a
+					href="/assets/alessandro-pimentel.pdf"
+					download="Alessandro_Pimentel_Resume.pdf"
+					class="-translate-y-1 -translate-x-1 bg-white text-green-600 hover:text-white hover:bg-green-900 [box-shadow:rgb(20,83,45)6px_6px] hover:[box-shadow:rgb(20,83,45)0px_0px] duration-300 hover:translate-y-0 hover:translate-x-0 px-4 py-2 rounded-2xl outline outline-green-900 hover:outline hover:outline-white"
+				>
+					Resume
+				</a>
+				<!-- linkedin -->
+				<a
+					href="https://www.linkedin.com/in/alessandro-pimentel-535490211/"
+					target="_blank"
+					class="-translate-y-1 -translate-x-1 bg-green-900 text-white hover:text-green-600 hover:bg-white [box-shadow:rgb(255,255,255)6px_6px] hover:[box-shadow:rgb(255,255,255)0px_0px] duration-300 hover:translate-y-0 hover:translate-x-0 px-4 py-2 rounded-2xl outline outline-white hover:outline hover:outline-green-600"
+				>
+					Linkedin
+				</a>
+			</span>
 			<a
 				href="#about-me"
-				class="absolute bottom-52 bg-gradient-to-b from-gray-600 to-gray-500 text-white px-4 py-2 rounded-2xl animate-bounce hover:shadow-green-400 hover:shadow-md hover:outline hover:outline-green-600"
+				class="absolute bottom-8 bg-gradient-to-b from-gray-600 to-gray-500 text-white px-4 py-2 rounded-2xl animate-bounce hover:shadow-green-400 hover:shadow-md hover:outline hover:outline-green-600"
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -49,7 +69,7 @@ import Timeline from "../components/Timeline.astro";
 			class="py-32 flex w-full items-center justify-center"
 		>
 			<div
-				class="flex flex-col justify-center lg:flex-row items-center bg-black p-8 w-fit border border-green-600 [box-shadow:rgb(20,83,45)12px_12px] hover:[box-shadow:rgb(20,83,45)0px_0px] transition-all duration-300"
+				class="flex flex-col rounded-xl justify-center lg:flex-row items-center bg-black p-8 w-fit border border-white [box-shadow:rgb(20,83,45)12px_12px] hover:[box-shadow:rgb(20,83,45)0px_0px] transition-all duration-300"
 			>
 				<span class="flex
 				flex-col
@@ -79,7 +99,7 @@ import Timeline from "../components/Timeline.astro";
 					class="relative hover:scale-110 transition-transform duration-300"
 				>
 					<img
-						src="/profile.jpeg"
+						src="/assets/profile.webp"
 						alt="Alessandro's profile picture"
 						class="w-auto h-20 lg:h-60 rounded-full outline outline-white"
 					/>
