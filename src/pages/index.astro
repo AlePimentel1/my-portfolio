@@ -1,33 +1,20 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import { workExperience } from "../constants";
-import Timeline from "../components/Timeline.astro";
+import WelcomeCard from "../components/WelcomeCard.astro";
+import CurrentProjects from "../components/CurrentProjects";
+import { Timeline } from "../components/TimeLine";
 ---
 
 <Layout title="Ale - Portfolio">
 	<main>
 		<section
+			id="welcome"
 			class="relative flex flex-col justify-center lg:flex-col min-h-screen items-center gap-10 mx-10"
 		>
-			<span
-				class="flex flex-col tracking-wide rounded-xl border p-24 bg-black [box-shadow:rgb(20,83,45)12px_12px]"
-			>
-				<span
-					class="flex flex-row text-white text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold"
-				>
-					Hi <p class="animate-wave">👋🏼</p>,
-				</span>
-				<h1
-					class="font-semibold
-				bg-gradient-to-r bg-clip-text text-transparent
-				from-green-400 via-green-600 to-green-700
-				animate-text text-5xl md:text-6xl lg:text-7xl xl:text-7xl"
-				>
-					I'm Alessandro Pimentel
-				</h1>
-			</span>
+			<WelcomeCard />
 			<span class="flex flex-row gap-4">
-				<!-- download resume -->
+				<!-- download resume  -->
 				<a
 					href="/assets/alessandro-pimentel.pdf"
 					download="Alessandro_Pimentel_Resume.pdf"
@@ -69,7 +56,7 @@ import Timeline from "../components/Timeline.astro";
 			class="py-32 flex w-full items-center justify-center"
 		>
 			<div
-				class="flex flex-col rounded-xl justify-center lg:flex-row items-center bg-black p-8 w-fit border border-white [box-shadow:rgb(20,83,45)12px_12px] hover:[box-shadow:rgb(20,83,45)0px_0px] transition-all duration-300"
+				class="flex flex-col rounded-xl justify-center lg:flex-row items-center bg-black p-8 w-fit border-2 [box-shadow:rgb(20,83,45)12px_12px] hover:[box-shadow:rgb(20,83,45)0px_0px] transition-all duration-300"
 			>
 				<span class="flex
 				flex-col
@@ -107,11 +94,33 @@ import Timeline from "../components/Timeline.astro";
 				</span>
 			</div>
 		</section>
-		<section
-			id="experience"
-			class="flex flex-col gap-4 w-full mx-auto items-center py-44"
-		>
-			<Timeline experience={workExperience} />
-		</section>
+		<Timeline experiences={workExperience} />
+		<CurrentProjects client:only="react" />
+		<script is:inline>
+			window.addEventListener("scroll", () => {
+				const sections = document.querySelectorAll("section");
+				let currentSectionId = "";
+
+				sections.forEach((section) => {
+					const rect = section.getBoundingClientRect();
+					const sectionCenter = rect.top + rect.height / 2;
+					const viewportCenter = window.innerHeight / 2;
+
+					if (
+						Math.abs(sectionCenter - viewportCenter) <
+						rect.height / 2
+					) {
+						currentSectionId = section.id;
+					}
+				});
+
+				if (
+					currentSectionId &&
+					window.location.hash !== `#${currentSectionId}`
+				) {
+					history.replaceState(null, "", `#${currentSectionId}`);
+				}
+			});
+		</script>
 	</main>
 </Layout>

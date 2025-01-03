@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 interface Props {
     sections: {
@@ -8,7 +8,18 @@ interface Props {
 }
 
 const Header: React.FC<Props> = ({ sections }) => {
-    const currentHash = window.location.hash;
+    const [currentHash, setCurrentHash] = React.useState('');
+
+    useEffect(() => {
+        const handleScroll = () => {
+            const { hash } = window.location;
+            setCurrentHash(hash);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, [window.location]);
+
     return (
         <header className="fixed top-6 left-0 right-0 flex items-center justify-center px-8 z-10">
             {/* Centered Navigation */}
@@ -17,7 +28,7 @@ const Header: React.FC<Props> = ({ sections }) => {
                     {sections.map((section) => (
                         <li key={section.id}>
                             <a
-                                className="hover:text-green-500 uppercase text-[13px] transition-transform duration-300"
+                                className={"hover:text-green-500 uppercase text-[13px] transition-transform duration-300" + (currentHash === `#${section.id}` ? ' text-green-500 font-medium' : '')}
                                 href={`#${section.id}`}
                             >
                                 {section.title}
