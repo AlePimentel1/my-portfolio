@@ -4,6 +4,7 @@ import { workExperience } from "../constants";
 import WelcomeCard from "../components/WelcomeCard.astro";
 import CurrentProjects from "../components/CurrentProjects";
 import { Timeline } from "../components/TimeLine";
+import Stack from "../components/Stack";
 ---
 
 <Layout title="Ale - Portfolio">
@@ -18,7 +19,7 @@ import { Timeline } from "../components/TimeLine";
 				<a
 					href="/assets/alessandro-pimentel.pdf"
 					download="Alessandro_Pimentel_Resume.pdf"
-					class="-translate-y-1 -translate-x-1 bg-white text-green-600 hover:text-white hover:bg-green-900 [box-shadow:rgb(20,83,45)6px_6px] hover:[box-shadow:rgb(20,83,45)0px_0px] duration-300 hover:translate-y-0 hover:translate-x-0 px-4 py-2 rounded-2xl outline outline-green-900 hover:outline hover:outline-white"
+					class="font-medium bg-[#198ba4aa] text-white px-4 py-2 rounded-2xl outline outline-gray-50 hover:scale-110 transition duration-100"
 				>
 					Resume
 				</a>
@@ -26,14 +27,14 @@ import { Timeline } from "../components/TimeLine";
 				<a
 					href="https://www.linkedin.com/in/alessandro-pimentel-535490211/"
 					target="_blank"
-					class="-translate-y-1 -translate-x-1 bg-green-900 text-white hover:text-green-600 hover:bg-white [box-shadow:rgb(255,255,255)6px_6px] hover:[box-shadow:rgb(255,255,255)0px_0px] duration-300 hover:translate-y-0 hover:translate-x-0 px-4 py-2 rounded-2xl outline outline-white hover:outline hover:outline-green-600"
+					class="font-medium bg-[#460631aa] text-white px-4 py-2 rounded-2xl outline outline-gray-50 hover:scale-110 transition duration-75"
 				>
 					Linkedin
 				</a>
 			</span>
 			<a
 				href="#about-me"
-				class="absolute bottom-8 bg-gradient-to-b from-gray-600 to-gray-500 text-white px-4 py-2 rounded-2xl animate-bounce hover:shadow-green-400 hover:shadow-md hover:outline hover:outline-green-600"
+				class="absolute bottom-8 bg-gradient-to-b from-gray-600 to-gray-500 text-white px-4 py-2 rounded-2xl animate-bounce hover:shadow-orange-400 hover:shadow-md hover:outline hover:outline-orange-600"
 			>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
@@ -51,53 +52,9 @@ import { Timeline } from "../components/TimeLine";
 				>
 			</a>
 		</section>
-		<section
-			id="about-me"
-			class="py-32 flex w-full items-center justify-center"
-		>
-			<div
-				class="flex flex-col md:gap-0 gap-4 rounded-xl justify-center lg:flex-row items-center bg-black p-8 m-8 md:m-0 w-fit border-2 [box-shadow:rgb(20,83,45)12px_12px] hover:[box-shadow:rgb(20,83,45)0px_0px] transition-all duration-300"
-			>
-				<span class="flex
-				flex-col
-				items-start
-				justify-center
-				gap-4">
-					<p
-						class="text-md md:text-3xl text-center lg:text-left
-					bg-gradient-to-r bg-clip-text text-transparent
-				from-green-400 via-green-600 to-green-700
-				animate-text"
-					>
-						About Me
-					</p>
-					<h2
-						class="max-w-3xl text-white text-sm md:text-xl text-balance tracking-wide"
-					>
-						I'm a 22 years old Full Stack Developer, with more than
-						3 years of experience. Self-taught developer who loves
-						learning new technologies and tackling exciting
-						challenges. I enjoy staying up-to-date with the latest
-						tools and technologies to continually improve and expand
-						my skill set.
-					</h2>
-				</span>
-				<span
-					class="relative hover:scale-110 transition-transform duration-300"
-				>
-					<img
-						src="/assets/profile.webp"
-						alt="Alessandro's profile picture"
-						class="w-auto h-20 lg:h-60 rounded-full outline outline-white"
-					/>
-					<p class="absolute text-3xl md:text-6xl -bottom-4 right-2">
-						🇺🇾
-					</p>
-				</span>
-			</div>
-		</section>
 		<Timeline experiences={workExperience} />
 		<CurrentProjects client:only="react" />
+		<Stack client:only="react" />
 		<script is:inline>
 			window.addEventListener("scroll", () => {
 				const sections = document.querySelectorAll("section");

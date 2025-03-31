@@ -1,8 +1,5 @@
+
 export const sections = [
-    {
-        id: "about-me",
-        title: "About Me",
-    },
     {
         id: "experience",
         title: "Experience",
@@ -11,6 +8,10 @@ export const sections = [
         id: "projects",
         title: "Projects",
     },
+    {
+        id: "stack",
+        title: "Stack"
+    }
 ];
 
 
@@ -52,3 +53,19 @@ export const projects = [
         href: 'https://scoutr.vercel.app/'
     },
 ]
+
+export const stack = [
+    { name: "HTML", bgColor: "#E34F26", icon: "/src/components/icons/html.svg" },
+    { name: "CSS", bgColor: "#264DE4", icon: "/src/components/icons/css.svg" },
+    { name: "JavaScript", bgColor: "#F7DF1E", icon: "/src/components/icons/javascript.svg" },
+    { name: "TypeScript", bgColor: "#3178C6", icon: "/src/components/icons/typescript.svg" },
+    { name: "Tailwind", bgColor: "#38BDF8", icon: "/src/components/icons/tailwind.svg" },
+    { name: "React", bgColor: "#61DAFB", icon: "/src/components/icons/react.svg" },
+    { name: "Redux", bgColor: "#764ABC", icon: "/src/components/icons/redux.svg" },
+    { name: "Next.js", bgColor: "#000000", icon: "/src/components/icons/nextjs.svg" },
+    { name: "Node.js", bgColor: "#68A063", icon: "/src/components/icons/nodejs.svg" },
+    { name: "Express.js", bgColor: "#444444", icon: "/src/components/icons/express.svg" },
+    { name: "MongoDB", bgColor: "#47A248", icon: "/src/components/icons/mongodb.svg" },
+    { name: "Git", bgColor: "#F05032", icon: "/src/components/icons/git.svg" },
+    { name: "WordPress", bgColor: "#3178C6", icon: "/src/components/icons/wordpress.svg" },
+];

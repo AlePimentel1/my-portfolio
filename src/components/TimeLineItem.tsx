@@ -28,27 +28,27 @@ export const TimelineItem: React.FC<TimelineItemProps> = ({
 
     return (
         <div className={`relative pb-12 last:pb-0 ${containerClasses}`}>
-            <div className={`absolute top-2 ${dotPosition} z-10 h-4 w-4 rounded-full border-2 border-green-800 bg-black`} />
-            <div className="group bg-black border-2 rounded-lg shadow-sm p-6 hover:shadow-md transition-shadow [box-shadow:rgb(20,83,45)12px_12px] hover:[box-shadow:rgb(20,83,45)0px_0px] duration-300">
+            <div className={`absolute top-2 ${dotPosition} z-2 h-4 w-4 rounded-full border-2 border-orange-800 bg-black`} />
+            <div className={`group bg-black/30 border-2 rounded-lg p-6 hover:scale-105 ${isLeft ? 'hover:border-[#198ba4aa] hover:shadow-xl hover:shadow-[#198ba4aa] hover:bg-black/50' : 'hover:border-[#962a72aa] hover:shadow-xl hover:shadow-[#962a72aa] hover:bg-black/50'} transition duration-150`}>
                 <div className="flex flex-col space-y-2">
-                    <h3 className="text-xl font-bold text-white">{title}</h3>
-                    <div className="flex flex-wrap gap-4 text-sm text-gray-600">
+                    <h3 className="text-xl font-bold text-orange-500">{title}</h3>
+                    <div className="flex flex-wrap gap-4 text-sm text-gray-400">
                         <div className="flex items-center gap-1">
-                            <Briefcase size={16} className="text-green-600" />
-                            <span className='text-gray-400'>{company}</span>
+                            <Briefcase size={16} />
+                            <span>{company}</span>
                         </div>
                         <div className="flex items-center gap-1">
-                            <MapPin size={16} className="text-green-600" />
-                            <span className='text-gray-400'>{location}</span>
+                            <MapPin size={16} />
+                            <span>{location}</span>
                         </div>
                         <div className="flex items-center gap-1">
-                            <Calendar size={16} className="text-green-600" />
-                            <span className='text-gray-400'>{period}</span>
+                            <Calendar size={16} />
+                            <span>{period}</span>
                         </div>
                     </div>
                 </div>
                 <p className="text-sm text-gray-300 font-medium mt-4">{description}</p>
             </div>
-        </div>
+        </div >
     );
 };
