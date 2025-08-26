@@ -52,7 +52,7 @@ import Stack from "../components/Stack";
 				>
 			</a>
 		</section>
-		<Timeline experiences={workExperience} />
+		<Timeline experiences={workExperience} client:only="react" />
 		<CurrentProjects client:only="react" />
 		<Stack client:only="react" />
 		<script is:inline>

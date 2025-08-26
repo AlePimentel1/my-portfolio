@@ -7,7 +7,7 @@ const CurrentProjects = () => {
                 <h2 className="text-2xl md:text-3xl xl:text-4xl text-center font-bold font-heading font-heading tracking-px-n leading-none text-orange-500">Current Projects</h2>
                 <p className="text-md text-pretty text-center font-medium leading-normal md:max-w-lg mx-auto text-white">Real projects that are currently in progress or active.</p>
                 <div className="mx-auto flex items-center justify-center">
-                    <div className="flex-wrap grid sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 max-w-[60%] md:max-w-[80%]">
+                    <div className="flex-wrap grid gap-6 sm:grid-cols-1 md:grid-cols-2 xl:grid-cols-3 max-w-[80%]">
                         {projects.map((project, index) => (
                             <div className="w-full col-span-1 flex items-center justify-center" key={index}>
                                 <div className="p-2 h-full flex flex-col items-center gap-2 max-w-[80%] bg-black/30 border rounded-xl hover:border-orange-500 hover:bg-black/50 transition duration-150">
