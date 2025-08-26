@@ -50,7 +50,13 @@ export const projects = [
         image: './assets/projects/be-scoutr.png',
         title: 'Be Scoutr',
         description: 'A platform destined to football scouts to connect and share information about players and teams. The platform was developed using Next Js, Node Js, Express, and MongoDB.',
-        href: 'https://scoutr.vercel.app/'
+        href: 'https://bescoutr.vercel.app/'
+    },
+    {
+        image: './assets/projects/cameltrace.png',
+        title: 'Cameltrace',
+        description: 'A CRM designed to organize commercial operations, internal workflows, business events, and more. The platform was developed using Next Js, Node Js, Express, MongoDB and deployed with Docker.',
+        href: 'https://cameltrace.app/'
     },
 ]
 
